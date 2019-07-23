@@ -41,7 +41,7 @@ class DesignCompliance(Compliance):
     _default_checks = ['DebugEnabledCheck', 'OtherComplianceCheck']
 
     def __init__(self,
-                 default_checks=None, ):
+                 default_checks=None):
         """
         Initialization method.
 
@@ -50,7 +50,7 @@ class DesignCompliance(Compliance):
         """
         super(DesignCompliance, self).__init__()
         if default_checks:
-            self._defaultTcChecks = default_checks[:]
+            DesignCompliance._default_checks = default_checks[:]
 
     def parse_args(self, description=None):
         """
@@ -108,7 +108,7 @@ class DesignCompliance(Compliance):
                       'imported_modules': imported_modules,
                       'function_calls': function_calls}
             for name in self.register:
-                if name in self._defaultInfraChecks:
+                if name in DesignCompliance._default_checks:
                     self.call_registered(name, **kwargs)
 
     @register('OtherComplianceCheck')
@@ -168,7 +168,7 @@ def main():
     sys.path.insert(0, ".")
 
     compliance = DesignCompliance()
-    files_list = compliance.get_files_list("Check for any non supported packages used in swtc")
+    files_list = compliance.get_files_list("Check for any design compliance issues.")
 
     if files_list:
         compliance.check(files_list=files_list)
