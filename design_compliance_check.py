@@ -45,7 +45,7 @@ class DesignCompliance(Compliance):
         """
         Initialization method.
 
-        :param default_checks: OPTIONAL list @n
+        :param default_checks: list
             List of checks to perform by default.
         """
         super(DesignCompliance, self).__init__()
@@ -58,7 +58,7 @@ class DesignCompliance(Compliance):
 
         Extends from class Compliance.
 
-        :param description: OPTIONAL string @n
+        :param description: str
             Description of the program.
         :return: object
         """
@@ -75,7 +75,7 @@ class DesignCompliance(Compliance):
         """
         Get the list of files to check.
 
-        :param description: OPTIONAL string @n
+        :param description: str
             Description of the program.
         :return: list
         """
@@ -85,7 +85,7 @@ class DesignCompliance(Compliance):
         """
         Check for design compliance.
 
-        :param files_list: MANDATORY list @n
+        :param files_list: list
             List to files to check.
         :return: None
         """
@@ -95,9 +95,9 @@ class DesignCompliance(Compliance):
 
     def check_files(self, files_list):
         """
-        Check files belonging to Eureka infrastructure for various compliance.
+        Check files for various compliance.
 
-        :param files_list: MANDATORY list @n
+        :param files_list: list
             List of files to check.
         :return: None
         """
@@ -116,7 +116,7 @@ class DesignCompliance(Compliance):
         """
         Method to check various other design compliance.
 
-        :param kwargs: MANDATORY dict @n
+        :param kwargs: dict
             Dictionary containing the required values.
         :return: None
         """
@@ -130,7 +130,7 @@ class DesignCompliance(Compliance):
         """
         Check whether a file contains calls to the debugger and/or print statements.
 
-        :param kwargs: MANDATORY dict @n
+        :param kwargs: dict
             Dictionary containing the required values.
         :return: None
         """

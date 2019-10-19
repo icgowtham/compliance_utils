@@ -38,7 +38,7 @@ class CodeCompliance(Compliance):
         """
         Parse the command line arguments.
 
-        :param description: OPTIONAL string @n
+        :param description: str
             Description of the program.
         :return: object
         """
@@ -53,7 +53,7 @@ class CodeCompliance(Compliance):
         """
         Get the list of files to check.
 
-        :param description: OPTIONAL string @n
+        :param description: str
             Description of the program.
         :return: list
         """
@@ -63,7 +63,7 @@ class CodeCompliance(Compliance):
         """
         Check code compliance using 'flake8'.
 
-        :param files_list: MANDATORY list @n
+        :param files_list: list
             List of files to check for code compliance.
         :return: None
         """
@@ -85,9 +85,9 @@ class CodeCompliance(Compliance):
         """
         Check code compliance using 'flake8'.
 
-        :param validator_module: MANDATORY str @n
+        :param validator_module: str
             Fully qualified name of the Python module of the validator.
-        :param files_list: @MANDATORY list @n
+        :param files_list: list
             List of files to check for code compliance.
         :return: None
         """
@@ -107,9 +107,9 @@ class CodeCompliance(Compliance):
         """
         Check code compliance using 'pylint'.
 
-        :param validator_module: MANDATORY str @n
+        :param validator_module: str
             Fully qualified name of the Python module of the validator.
-        :param files_list: @MANDATORY list @n
+        :param files_list: list
             List of files to check for code compliance.
         :return: None
         """

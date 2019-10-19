@@ -16,7 +16,7 @@ class CodeComplexity(Compliance):
         """
         Parse the command line arguments.
 
-        :param description: OPTIONAL string @n
+        :param description: str
             Description of the program.
         :return: object
         """
@@ -26,7 +26,7 @@ class CodeComplexity(Compliance):
         """
         Get the list of files to check.
 
-        :param description: OPTIONAL string @n
+        :param description: str
             Description of the program.
         :return: list
         """
@@ -36,7 +36,7 @@ class CodeComplexity(Compliance):
         """
         Check code complexity compliance using 'radon'.
 
-        :param files_list: @MANDATORY list @n
+        :param files_list: list
             List of files to check for code complexity compliance.
         :return: None
         """

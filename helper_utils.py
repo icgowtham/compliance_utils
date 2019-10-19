@@ -24,9 +24,9 @@ def execute_shell_command(command, is_check_for_exit_code=True):
     """
     Execute an external shell command using subprocess module.
 
-    :param command: MANDATORY list @n
+    :param command: list
         List containing the command to execute and its arguments.
-    :param is_check_for_exit_code: OPTIONAL boolean @n
+    :param is_check_for_exit_code: boolean
         Boolean value to indicate whether to check for non-zero exit status (Python 3 only).
 
     :return: list
@@ -123,9 +123,9 @@ def get_diff_between_branches(source_branch=None, target_branch=None):
     """
     Get the list of names of the changed files between branches.
 
-    :param source_branch: OPTIONAL string @n
+    :param source_branch: str
         Source Git branch name to compare with, defaults to 'dev' branch.
-    :param target_branch: OPTIONAL string @n
+    :param target_branch: str
         Target Git branch name, defaults to current branch.
     :return: list
         List of files differing between the branches.
@@ -164,11 +164,11 @@ def get_file_modification_time(filename, is_human_readable=False, dt_format=None
     On Linux based systems, currently there is no way to get the file creation time.
     For more details see: https://stackoverflow.com/a/39501288
 
-    :param filename: MANDATORY string @n
+    :param filename: str
         Name of the file with either relative or full path.
-    :param is_human_readable: OPTIONAL boolean @n
+    :param is_human_readable: boolean
         Boolean flag to return the value in human readable format.
-    :param dt_format: OPTIONAL string @n
+    :param dt_format: str
         Format specifier (time or date) for the output. For e.g., "%m-%d-%Y"
     """
     if os.path.isfile(filename):
@@ -186,7 +186,7 @@ def run_unit_tests_for_module(module_path):
     """
     Execute unit tests for a given module.
 
-    :param module_path: MANDATORY string @n
+    :param module_path: str
         Relative path (relative to the base Git repo path) of the module
         for which unit tests need to be executed.
     :return: int
@@ -201,7 +201,7 @@ def filter_files(files_list):
     """
     Filter files from the input list.
 
-    :param files_list : MANDATORY files @n
+    :param files_list : files
         The list of files to be filtered
     :return
         The filtered file list
@@ -215,7 +215,7 @@ def parse_file(file_name):
     """
     Parse the given file using 'ast' to further usage.
 
-    :param file_name: MANDATORY string @n
+    :param file_name: str
         The file which has to be parsed.
     :return: str
         Parsed file contents.
@@ -233,15 +233,15 @@ def get_program_details(file_name,
     """
     Get various parts of a Python program file based on the boolean values.
 
-    :param file_name: MANDATORY string @n
+    :param file_name: str
         The Python program file to get the contents from.
-    :param is_imports: OPTIONAL boolean @n
+    :param is_imports: boolean
         Set this if import objects are required.
-    :param is_function_defs: OPTIONAL boolean @n
+    :param is_function_defs: boolean
         Set this if function definition objects are required.
-    :param is_function_calls: OPTIONAL boolean @n
+    :param is_function_calls: boolean
         Set this if function call objects are required.
-    :param is_return_types: OPTIONAL boolean @n
+    :param is_return_types: boolean
         Set this if return objects are required.
     :return: list
     """
@@ -274,7 +274,7 @@ def get_function_names_from_file(file_name):
     """
     Get the names of functions from a given file.
 
-    :param file_name:: MANDATORY string @n
+    :param file_name:: str
         Name of the file from which to retrieve the function names.
     :return: list
         List containing function names.
@@ -301,7 +301,7 @@ def get_function_calls_from_file(file_name):
     """
     Get the list of function names which are called in a given file.
 
-    :param file_name:
+    :param file_name: str
         The Python program file from which to get the list of function names which are called.
     :return: list
     """
@@ -336,7 +336,7 @@ def get_plugins(plugin_folder=None):
     """
     Get all the plugins from a folder.
 
-    :param plugin_folder: OPTIONAL string @n
+    :param plugin_folder: str
         Path of the folder containing the plugins.
     :return: list
         List of plugins.
@@ -358,7 +358,7 @@ def load_plugin(plugin):
     """
     Load a plugin(module) using 'import_lib'.
 
-    :param plugin: MANDATORY string @n
+    :param plugin: str
         Name of the plugin to load.
 
     :return: object

@@ -15,7 +15,7 @@ class DocCompliance(Compliance):
         """
         Parse the command line arguments.
 
-        :param description: OPTIONAL string @n
+        :param description: str
             Description of the program.
         :return: object
         """
@@ -25,7 +25,7 @@ class DocCompliance(Compliance):
         """
         Get the list of files to check.
 
-        :param description: OPTIONAL string @n
+        :param description: str
             Description of the program.
         :return: list
         """
@@ -35,7 +35,7 @@ class DocCompliance(Compliance):
         """
         Check documentation compliance using 'pep257'.
 
-        :param files_list: @MANDATORY list @n
+        :param files_list: list
             List of files to check for documentation compliance.
         :return: None
         """

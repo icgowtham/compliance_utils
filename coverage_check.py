@@ -18,7 +18,7 @@ class CoverageCheckCompliance(Compliance):
 
         Overrides from class Compliance, since the options are totally different.
 
-        :param description: OPTIONAL string @n
+        :param description: str
             Description of the program.
         :return: object
         """
@@ -45,7 +45,7 @@ class CoverageCheckCompliance(Compliance):
         """
         Check for coverage and unit tests.
 
-        @param files_list: MANDATORY list @n
+        @param files_list: list
             List to files to check.
         @return: None
         """
@@ -55,7 +55,7 @@ class CoverageCheckCompliance(Compliance):
         """
         Get the list of files to check.
 
-        @param description: OPTIONAL string @n
+        @param description: str
             Description of the program.
         @return: list
         """
@@ -81,7 +81,7 @@ class CoverageCheckCompliance(Compliance):
         Check only those files that are part of Eureka infrastructure from the list of files
         to be committed.
 
-        @param files_list: MANDATORY list @n
+        @param files_list: list
             List to files to check.
         @return: None
         """
@@ -130,7 +130,7 @@ class CoverageCheckCompliance(Compliance):
         """
         Get coverage for files in the Eureka infra directories.
 
-        @param coverage_dir: MANDATORY string @n
+        @param coverage_dir: str
             The directory to run the coverage report on.
         @return: dict
             A dictionary with file as key and coverage percentage as value.
