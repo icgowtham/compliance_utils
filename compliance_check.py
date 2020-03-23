@@ -9,16 +9,17 @@ from helper_utils import (get_files_to_be_committed, get_diff_between_branches)
 class Compliance(object):
     """Abstract class for all compliance checking operations."""
 
-    _parser = None
+    def __init__(self):
+    	self._parser = None
 
     @abstractmethod
     def parse_args(self, description=None):
         """
         Parse the command line arguments.
 
-        @param description: str
+        :param description: str
             Description of the program.
-        @return: object
+        :return: object
         """
         self._parser = argparse.ArgumentParser(description=description)
         self._parser.add_argument("-pre-commit",
@@ -46,9 +47,9 @@ class Compliance(object):
         """
         Get the list of files to check.
 
-        @param description: str
+        :param description: str
             Description of the program.
-        @return: list
+        :return: list
         """
         files_list = []
         args_parser = self.parse_args(description=description)
@@ -71,9 +72,9 @@ class Compliance(object):
         """
         Perform the compliance check.
 
-        @param files_list: list
+        :param files_list: list
             List of files to check for compliance
-        @return: None
+        :return: None
         """
         raise NotImplementedError("Please implement this method as per your requirements.")
 

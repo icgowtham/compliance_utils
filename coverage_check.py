@@ -37,7 +37,7 @@ class CoverageCheckCompliance(Compliance):
         """
         Getter for 'parser'.
 
-        @return: object
+        :return: object
         """
         return self._parser.parse_args()
 
@@ -45,9 +45,9 @@ class CoverageCheckCompliance(Compliance):
         """
         Check for coverage and unit tests.
 
-        @param files_list: list
+        :param files_list: list
             List to files to check.
-        @return: None
+        :return: None
         """
         CoverageCheckCompliance.check_coverage(files_list)
 
@@ -55,9 +55,9 @@ class CoverageCheckCompliance(Compliance):
         """
         Get the list of files to check.
 
-        @param description: str
+        :param description: str
             Description of the program.
-        @return: list
+        :return: list
         """
         files_list = []
         args_parser = self.parse_args(description=description)
@@ -81,9 +81,9 @@ class CoverageCheckCompliance(Compliance):
         Check only those files that are part of Eureka infrastructure from the list of files
         to be committed.
 
-        @param files_list: list
+        :param files_list: list
             List to files to check.
-        @return: None
+        :return: None
         """
         change_set = helper.filter_files(files_list)
         file_to_coverage_pct_map = dict()
@@ -130,9 +130,9 @@ class CoverageCheckCompliance(Compliance):
         """
         Get coverage for files in the Eureka infra directories.
 
-        @param coverage_dir: str
+        :param coverage_dir: str
             The directory to run the coverage report on.
-        @return: dict
+        :return: dict
             A dictionary with file as key and coverage percentage as value.
         """
         # Pass just the 'coverage_dir' directory to 'pytest' so that we do not get collection errors.

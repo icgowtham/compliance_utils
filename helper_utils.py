@@ -8,8 +8,6 @@ import re
 import subprocess
 import sys
 
-from six import PY2
-
 from config import (
     COMPLIANCE_CHECK_PLUGINS_FOLDER,
     GIT_DIFF_FILTER,
@@ -32,19 +30,11 @@ def execute_shell_command(command, is_check_for_exit_code=True):
     :return: list
         Command output in list form.
     """
-    if PY2:
-        cmd = subprocess.Popen(command,
-                               stdout=subprocess.PIPE,
-                               stderr=subprocess.PIPE)
-        out, err = cmd.communicate()
-        # Filter out the empty element and '\n' from the output.
-        cmd_output = list(filter(None, out.split('\n')))
-    else:
-        cmd = subprocess.run(command, stdout=subprocess.PIPE)
-        if is_check_for_exit_code:
-            cmd.check_returncode()
-        # Filter out the empty element and '\n' from the output.
-        cmd_output = list(filter(None, cmd.stdout.decode('utf-8').split('\n')))
+    cmd = subprocess.run(command, stdout=subprocess.PIPE)
+    if is_check_for_exit_code:
+        cmd.check_returncode()
+    # Filter out the empty element and '\n' from the output.
+    cmd_output = list(filter(None, cmd.stdout.decode('utf-8').split('\n')))
     return cmd_output
 
 

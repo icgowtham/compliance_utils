@@ -1,12 +1,11 @@
 """Configuration file for build/utilities."""
 
 from colorama import Fore, Style
-from six import PY2
 
 # Check mark character
-CHECK_MARK = '' if PY2 else u'\u2714'
+CHECK_MARK = u'\u2714'
 # Cross mark character
-CROSS_MARK = '' if PY2 else u'\u2718'
+CROSS_MARK = u'\u2718'
 # Okay green colour.
 OKAY_GREEN = Fore.GREEN
 # Error red colour.
@@ -18,8 +17,8 @@ OKAY_MSG = OKAY_GREEN + CHECK_MARK + NORMAL_TEXT
 # Error message prefix or suffix.
 ERROR_MSG = ERROR_RED + CROSS_MARK + NORMAL_TEXT
 
-# Tuple containing directories which can be ignored while looking for 'unitTest' files.
-IGNORE_LIST = ('tests', 'unitTests', 'mockLib', 'samples', 'templates', 'images', 'docs')
+# Tuple containing directories which can be ignored while looking for 'unit_test' files.
+IGNORE_LIST = ('tests', 'unit_tests', 'samples', 'templates', 'images', 'docs')
 
 # The cut-off for code coverage percentage. Anything below this will be flagged.
 CUT_OFF_CODE_COVERAGE_PCT = 80

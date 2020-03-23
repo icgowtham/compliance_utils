@@ -49,9 +49,9 @@ def test_get_files_to_be_committed(mock_get_files_to_be_committed):
     :param mock_get_files_to_be_committed: MANDATORY mock object @n
     :return: None
     """
-    mock_get_files_to_be_committed.return_value = ["eureka/connections/ssh/ssh.py",
-                                                   "framework/executor/api.py",
-                                                   "testApi/heuristics.py"]
+    mock_get_files_to_be_committed.return_value = ["coverage_check.py",
+                                                   "design_compliance_check.py",
+                                                   "doc_compliance_check.py"]
     assert (len(helper.get_files_to_be_committed()) > 0)
 
 
@@ -66,9 +66,9 @@ def test_get_diff_between_branches(mock_get_diff_between_branches):
     """
     files_list = helper.get_diff_between_branches(source_branch='dev', target_branch='dev')
     assert (len(files_list) == 0)
-    mock_get_diff_between_branches.return_value = ["eureka/connections/ssh/ssh.py",
-                                                   "framework/executor/api.py",
-                                                   "testApi/heuristics.py"]
+    mock_get_diff_between_branches.return_value = ["coverage_check.py",
+                                                   "design_compliance_check.py",
+                                                   "doc_compliance_check.py"]
     files_list = helper.get_diff_between_branches()
     assert (len(files_list) > 0)
 
